@@ -44,39 +44,5 @@ public class JavaConfigurer {
         return registrationBean;
     }
 
-    @Bean
-    public Docket swaggerConfiguration() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.any())
-                .build()
-                .apiInfo(apiInfo())
-                .securityContexts(Arrays.asList(securityContext()))
-                .securitySchemes(Arrays.asList(apiKey()));
-    }
 
-    private List<SecurityReference> defaultAuth() {
-        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
-        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
-        authorizationScopes[0] = authorizationScope;
-        return Arrays.asList(new SecurityReference("Token", authorizationScopes));
-    }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Spring Security REST API Document")
-                .description("Develop by Chanthoeurn Tuon")
-                .termsOfServiceUrl("chanthoeurn.tuon@gmail.com")
-                .version("1.0")
-                .build();
-    }
-
-    private ApiKey apiKey() {
-        return new ApiKey("Token", "Authorization", "header");
-    }
-
-    private SecurityContext securityContext() {
-        return SecurityContext.builder().securityReferences(defaultAuth()).build();
-    }
 }
