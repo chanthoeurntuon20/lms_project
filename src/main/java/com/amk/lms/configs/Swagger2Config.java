@@ -18,7 +18,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.Arrays;
 import java.util.List;
 @Configuration
-@EnableWebMvc
 @EnableSwagger2
 public class Swagger2Config {
 
