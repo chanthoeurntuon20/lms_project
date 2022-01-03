@@ -79,6 +79,7 @@ public class UserServiceImpl implements UserService {
             _req.setLastName(user.getLastName());
             _req.setPassword(user.getPassword());
             _req.setRoles(user.getRoles());
+            _req.setChannelCode(user.getChannelCode());
 
             Pattern pattern = Pattern.compile("^(.+)@(.+)$");
 
@@ -100,6 +101,7 @@ public class UserServiceImpl implements UserService {
             res.setLastName(userBase.getLastName());
             res.setPassword(userBase.getPassword());
             res.setRoles(userBase.getRoles());
+            res.setChannelCode(userBase.getChannelCode());
             return res;
         } catch (Exception ex) {
             throw new EtInternalServerErrorException(ex.getMessage());

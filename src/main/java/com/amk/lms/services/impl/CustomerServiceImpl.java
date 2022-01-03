@@ -7,12 +7,10 @@ import com.amk.lms.exceptions.EtInternalServerErrorException;
 import com.amk.lms.exceptions.EtResourceNotFoundException;
 import com.amk.lms.models.entities.Account;
 import com.amk.lms.models.entities.Customer;
-import com.amk.lms.models.req.customers.AccountReq;
 import com.amk.lms.models.req.customers.CustomerReq;
 import com.amk.lms.models.res.customers.AccountRes;
 import com.amk.lms.models.res.customers.CustomerRes;
 import com.amk.lms.services.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
