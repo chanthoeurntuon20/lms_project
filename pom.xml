@@ -14,6 +14,7 @@
 	<packaging>war</packaging>
 	<name>lms</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -78,6 +79,7 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>

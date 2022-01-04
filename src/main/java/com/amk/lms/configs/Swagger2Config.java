@@ -2,6 +2,7 @@ package com.amk.lms.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -31,7 +32,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
                 .build()
                 .apiInfo(apiInfo())
                 .securityContexts(Arrays.asList(securityContext()))
