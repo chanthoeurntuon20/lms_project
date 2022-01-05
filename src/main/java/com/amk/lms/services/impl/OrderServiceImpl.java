@@ -44,18 +44,18 @@ public class OrderServiceImpl implements OrderService {
                 if(orderResList.get(i).getOrderDetailResList().size()>0){
                     List<OrderDetailRes> orderDeResList = new ArrayList<>();
                     for (int j=0;j<=orderList.get(i).getOrderDetailList().size()-1;j++){
-                        OrderRes orderDeRes = new OrderRes();
-                        accountRes.setAcctNo(customerList.get(i).getAccountList().get(j).getAcctNo());
-                        accountRes.setAcctCcy(customerList.get(i).getAccountList().get(j).getAcctCcy());
-                        accountRes.setAmount(customerList.get(i).getAccountList().get(j).getAmount());
-                        accountRes.setId(customerList.get(i).getAccountList().get(j).getId());
-                        accountResList.add(accountRes);
+                        OrderDetailRes orderDeRes = new OrderDetailRes();
+                        orderDeRes.setId(orderList.get(i).getOrderDetailList().get(j).getOrderDeId());
+                        orderDeRes.setQuantity(orderList.get(i).getOrderDetailList().get(j).getQuantity());
+                        orderDeRes.setUnitPrice(orderList.get(i).getOrderDetailList().get(j).getUnitPrice());
+                        orderDeRes.setDiscount(orderList.get(i).getOrderDetailList().get(j).getDiscount());
+                        orderDeResList.add(orderDeRes);
                     }
-                    custRes.setAccountResList(accountResList);
+                    orderRes.setOrderDetailResList(orderDeResList);
                 }
-                customerResList.add(custRes);
+                orderResList.add(orderRes);
             }
-            return customerResList;
+            return orderResList;
         }catch (Exception ex){
             throw new EtAuthException(ex.getMessage());
         }
