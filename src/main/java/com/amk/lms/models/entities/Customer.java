@@ -33,5 +33,8 @@ public class Customer implements Serializable {
     @OneToMany()
     @JoinColumn(name = "cusId", referencedColumnName = "Id")
     private List<Account> accountList;
+    @OneToMany()
+    @JoinColumn(name = "cusId", referencedColumnName = "Id")
+    private List<Order> orderList;
 
 }

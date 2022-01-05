@@ -83,7 +83,6 @@ public class CustomerServiceImpl implements CustomerService {
                 throw new EtAuthException("Invalid email format");
 
             this.customerRepository.saveAndFlush(customer);
-            customer = this.customerRepository.getById(customer.getId());
             var acctList = this.accountRepository.findByCusId(customer.getId());
                 List<Account> accountResList = new ArrayList<>();
                 for (int j=0;j<=acctList.size()-1;j++){
