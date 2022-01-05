@@ -11,9 +11,9 @@ public class OrderReq {
     @JsonIgnore
     private Integer OrderId ;
     private Integer customerId;
+    private String shipName;
     private Date orderDate;
     private Date shippedDate;
-    private String shipName;
     private String shipAddress;
     private List<OrderDetailReq> orderDetailReqList;
 }

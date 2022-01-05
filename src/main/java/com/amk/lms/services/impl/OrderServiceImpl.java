@@ -10,8 +10,11 @@ import com.amk.lms.models.req.orders.OrderReq;
 import com.amk.lms.models.res.orders.OrderDetailRes;
 import com.amk.lms.models.res.orders.OrderRes;
 import com.amk.lms.services.OrderService;
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
+@Service
 public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final OrderDetailRepository orderDetailRepository;

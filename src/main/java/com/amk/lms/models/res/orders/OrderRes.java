@@ -1,6 +1,4 @@
 package com.amk.lms.models.res.orders;
-
-import com.amk.lms.models.req.orders.OrderDetailReq;
 import lombok.Data;
 
 import java.util.Date;

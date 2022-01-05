@@ -16,17 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("order/v1/")
 public class OrderController {
-//    @Autowired
+    @Autowired
     private OrderServiceImpl orderService;
 
     @PostMapping("create")
-    public ResponseEntity<OrderRes> AddCustomer(@RequestBody OrderReq req) throws EtAuthException {
+    public ResponseEntity<OrderRes> AddOrder(@RequestBody OrderReq req) throws EtAuthException {
         try {
             OrderRes order = orderService.addOrder(req);
-
             req.setOrderId(order.getOrderId());
             orderService.addOrderDetail(req);
-
             order = orderService.findOrderById(order.getOrderId());
             return new ResponseEntity<OrderRes>(order, HttpStatus.OK);
         } catch (Exception ex) {

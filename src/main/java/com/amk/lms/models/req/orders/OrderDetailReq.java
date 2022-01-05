@@ -8,7 +8,7 @@ public class OrderDetailReq {
     @JsonIgnore
     private Integer Id;
     private Integer orderId;
-    private Double unitPrice;
     private Integer quantity;
+    private Double unitPrice;
     private Double discount;
 }
