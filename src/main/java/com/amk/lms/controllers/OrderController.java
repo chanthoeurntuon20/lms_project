@@ -27,7 +27,7 @@ public class OrderController {
             req.setOrderId(order.getOrderId());
             orderService.addOrderDetail(req);
             order = orderService.findOrderById(order.getOrderId());
-            return new ResponseEntity<OrderRes>(order, HttpStatus.OK);
+            return new ResponseEntity<>(order, HttpStatus.OK);
         } catch (Exception ex) {
             throw new EtInternalServerErrorException(ex.getMessage().toString());
         }

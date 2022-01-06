@@ -11,8 +11,10 @@ import com.amk.lms.services.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,7 +24,7 @@ public class CustomerController {
     private CustomerServiceImpl customerService;
 
     @PostMapping("create")
-    public ResponseEntity<CustomerRes> AddCustomer(@RequestBody CustomerReq req) throws EtAuthException {
+    public ResponseEntity<CustomerRes> AddCustomer(@Valid @RequestBody CustomerReq req) throws EtAuthException {
         try{
             CustomerRes customer  = customerService.addCustomer(req);
 
