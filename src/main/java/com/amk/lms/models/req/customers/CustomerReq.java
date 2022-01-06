@@ -16,6 +16,5 @@ public class CustomerReq {
     private String mobileNumber;
     private String address;
     private String status;
-
     private List<AccountReq> accountReqList;
 }

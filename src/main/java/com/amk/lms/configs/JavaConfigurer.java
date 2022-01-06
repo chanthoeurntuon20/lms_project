@@ -31,6 +31,7 @@ public class JavaConfigurer {
         registrationBean.addUrlPatterns("/api/v1/categories/*");
         return registrationBean;
     }
+    //Rabbitmq configuretion
 
 
 }
